@@ -23,7 +23,7 @@
 
     <script>
         function getIP() {
-            fetch('https://ipinfo.io/json?token=b6d8c8c4fe546c') // Replace with your free token from ipinfo.io
+            fetch('https://ipinfo.io/json?token=INPUT_YOUR_TOKEN') // Replace with your free token from ipinfo.io
             .then(response => response.json())
             .then(data => {
                 document.getElementById("info").innerHTML = `
