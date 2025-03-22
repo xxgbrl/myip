@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Address and Location Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #info {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Your IP Address and Location</h2>
+    <button onclick="getIP()">Check My IP</button>
+    <div id="info"></div>
+
+    <script>
+        function getIP() {
+            fetch('https://ipinfo.io/json?token=b6d8c8c4fe546c') // Replace with your free token from ipinfo.io
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("info").innerHTML = `
+                    <p><strong>IP Address:</strong> ${data.ip}</p>
+                    <p><strong>City:</strong> ${data.city}</p>
+                    <p><strong>Region:</strong> ${data.region}</p>
+                    <p><strong>Country:</strong> ${data.country}</p>
+                    <p><strong>Location:</strong> ${data.loc}</p>
+                    <p><strong>ISP:</strong> ${data.org}</p>
+                `;
+            })
+            .catch(error => console.error('Error fetching IP info:', error));
+        }
+    </script>
+</body>
+</html>
