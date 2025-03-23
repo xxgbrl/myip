@@ -31,8 +31,9 @@
                     <p><strong>City:</strong> ${data.city}</p>
                     <p><strong>Region:</strong> ${data.region}</p>
                     <p><strong>Country:</strong> ${data.country}</p>
-                    <p><strong>Location:</strong> ${data.loc}</p>
+                    <p><strong>Location:</strong> ${data.loc}</p> 
                     <p><strong>ISP:</strong> ${data.org}</p>
+                    <p><a href="https://www.google.com/maps?q=${data.loc}" target="_blank">View on Google Maps</a></p>
                 `;
             })
             .catch(error => console.error('Error fetching IP info:', error));
